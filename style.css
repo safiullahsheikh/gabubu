@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ffd6e8, #ffe6f5);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #ff1a75;
+    font-size: 38px;
+}
+
+.message {
+    font-size: 18px;
+    margin: 25px 0;
+    color: #444;
+}
+
+.photo {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease;
+}
+
+.photo:hover {
+    transform: scale(1.08);
+}
+
+.love-button {
+    background-color: #ff4d94;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.love-button:hover {
+    background-color: #ff1a75;
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+    font-size: 20px;
+    margin-top: 25px;
+    color: #cc0066;
+    font-weight: bold;
+    animation: fadeIn 2s forwards;
+}
+
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.delay1 { animation-delay: 1s; }
+.delay2 { animation-delay: 2s; }
+.delay3 { animation-delay: 3s; }
+.delay4 { animation-delay: 4s; }
+.delay5 { animation-delay: 5s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Floating Hearts Animation */
+.hearts::before,
+.hearts::after {
+    content: "❤️ 💕 ❤️ 💕 ❤️ 💕 ❤️ 💕 ❤️ 💕";
+    position: fixed;
+    width: 100%;
+    top: -50px;
+    font-size: 24px;
+    animation: floatHearts 18s linear infinite;
+    opacity: 0.6;
+}
+
+.hearts::after {
+    animation-delay: 9s;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(-50px); }
+    100% { transform: translateY(100vh); }
+}
